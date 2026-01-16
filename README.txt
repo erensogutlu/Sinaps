@@ -40,10 +40,10 @@ Sinaps is a modern, interactive and user experience-oriented web project that dr
 * Technologies Used : 
 
  -> HTML/CSS 
- ->JavaScript
+ -> JavaScript
 
 * Developer : Eren Söğütlü
 
 ⚠️ IMPORTANT NOTE : This project is a DEMO study developed for education and design purposes. No real money transfer or donation is made.
 
-LINK: https://erensogutlu-sinaps.netlify.app/
+LINK : https://erensogutlu-sinaps.netlify.app/
