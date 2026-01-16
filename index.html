@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Geleceğe Bağlan | Sinaps</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="icon" href="icon.svg" />
+	</head>
+	<body>
+		<!-- DEMO UYARI BANDI -->
+		<div class="demo-top-bar">
+			<i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px"></i>
+			Dikkat: Bu proje eğitim amaçlı bir tasarım örneğidir. Gerçek bağış ve
+			ödeme işlemi yapılmamaktadır.
+		</div>
+
+		<!-- yükleme ekranı -->
+		<div id="preloader">
+			<i class="fa-solid fa-brain loader-icon"></i>
+			<h3 style="margin-top: 20px; color: var(--yazi-rengi)">
+				Sinapslar Bağlanıyor...
+			</h3>
+		</div>
+
+		<!-- sinaps ağı arka planı -->
+		<canvas id="sinapsCanvas"></canvas>
+
+		<!-- header -->
+		<header class="glass-panel" id="header">
+			<nav class="navbar">
+				<a href="#" class="logo">
+					<i class="fa-solid fa-circle-nodes"></i> Sinaps
+				</a>
+
+				<div class="mobil-menu-toggle" id="menuBtn">
+					<i class="fa-solid fa-bars" style="color: var(--yazi-rengi)"></i>
+				</div>
+
+				<ul class="nav-linkleri" id="navMenu">
+					<li><a href="#vizyon">Neden Sinaps?</a></li>
+					<li><a href="#nasil">Nasıl Çalışır?</a></li>
+					<li><a href="#referanslar">Hikayeler</a></li>
+					<li><a href="#magaza">Mağaza</a></li>
+					<li><a href="#bagis" class="bagis-btn-nav">Destek Ol</a></li>
+					<button class="tema-btn" onclick="toggleTheme()">
+						<i class="fa-solid fa-moon"></i>
+					</button>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- hero section -->
+		<section class="hero">
+			<div class="hero-icerik">
+				<h1>Geleceğe<br />Bağlan.</h1>
+				<p>
+					SMA ile mücadelede teknolojiyi, şeffaflığı ve insanlığı
+					birleştiriyoruz. Her bağış, kopan bir sinapsı onarmak için yeni bir
+					şans.
+				</p>
+				<a href="#bagis" class="cta-buton">Harekete Geç</a>
+			</div>
+
+			<div
+				class="scroll-down"
+				onclick="document.getElementById('vizyon').scrollIntoView()"
+			>
+				<i class="fa-solid fa-chevron-down"></i>
+			</div>
+		</section>
+
+		<!-- sponsor marquee -->
+		<div class="sponsor-wrapper">
+			<div class="sponsor-track">
+				<!-- tekrarlayan sponsorlar -->
+				<div class="sponsor-item">
+					<i class="fa-brands fa-google"></i> Google
+				</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-microsoft"></i> Microsoft
+				</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-amazon"></i> Amazon
+				</div>
+				<div class="sponsor-item"><i class="fa-brands fa-apple"></i> Apple</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-spotify"></i> Spotify
+				</div>
+				<div class="sponsor-item"><i class="fa-brands fa-uber"></i> Uber</div>
+				<!-- döngü için tekrar -->
+				<div class="sponsor-item">
+					<i class="fa-brands fa-google"></i> Google
+				</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-microsoft"></i> Microsoft
+				</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-amazon"></i> Amazon
+				</div>
+				<div class="sponsor-item"><i class="fa-brands fa-apple"></i> Apple</div>
+				<div class="sponsor-item">
+					<i class="fa-brands fa-spotify"></i> Spotify
+				</div>
+				<div class="sponsor-item"><i class="fa-brands fa-uber"></i> Uber</div>
+			</div>
+		</div>
+
+		<!-- neden sinaps? (bento grid) -->
+		<section class="bolum" id="vizyon">
+			<h2 class="baslik">Neden <span>Sinaps?</span></h2>
+			<p
+				style="
+					text-align: center;
+					max-width: 700px;
+					margin: -2rem auto 3rem auto;
+					opacity: 0.8;
+				"
+			>
+				Klasik bağış yöntemlerinin ötesine geçiyoruz. İşte Sinaps projesini
+				benzersiz kılan temel özellikler.
+			</p>
+
+			<div class="bento-grid">
+				<!-- büyük kutu -->
+				<div class="bento-item bento-large glass-panel">
+					<div class="bento-badge">
+						<i class="fa-solid fa-star"></i> Öne Çıkan
+					</div>
+					<div class="bento-icon"><i class="fa-solid fa-microchip"></i></div>
+					<h3>Yapay Zeka Destekli Dağılım</h3>
+					<p>
+						Toplanan bağışlar, tek bir havuzda birikip yapay zeka algoritmaları
+						ile aciliyet sırasına göre en kritik durumdaki çocuklara otomatik
+						olarak yönlendirilir.
+					</p>
+				</div>
+
+				<!-- uzun kutu -->
+				<div class="bento-item bento-tall glass-panel">
+					<div class="bento-icon"><i class="fa-solid fa-infinity"></i></div>
+					<h3>Sürdürülebilir Destek</h3>
+					<p>
+						Bir kampanya bittiğinde sistem durmaz. Bağışçılarımız "Sinaps
+						Aboneliği" ile her ay düzenli küçük miktarlarla sürece dahil olur.
+					</p>
+					<div
+						style="
+							margin-top: auto;
+							padding-top: 1rem;
+							border-top: 1px solid rgba(0, 0, 0, 0.1);
+						"
+					>
+						<small>Aktif Abone: <strong>14.205</strong></small>
+					</div>
+				</div>
+
+				<!-- normal kutu -->
+				<div class="bento-item bento-normal glass-panel">
+					<div class="bento-icon">
+						<i class="fa-solid fa-magnifying-glass-chart"></i>
+					</div>
+					<h3>%100 Şeffaflık</h3>
+					<p>
+						Her kuruşun nereye gittiğini anlık olarak takip edebilirsiniz. Tüm
+						işlemler şeffaf bir şekilde sunulur.
+					</p>
+				</div>
+
+				<!-- normal kutu -->
+				<div class="bento-item bento-normal glass-panel">
+					<div class="bento-icon"><i class="fa-solid fa-bolt"></i></div>
+					<h3>Zamanla Yarış</h3>
+					<p>
+						Dijital altyapımız sayesinde bürokrasiyi aşıp yardımı en hızlı
+						şekilde ulaştırıyoruz.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- nasıl çalışır? -->
+		<section class="bolum" id="nasil" style="background: rgba(0, 0, 0, 0.02)">
+			<h2 class="baslik">Nasıl <span>Çalışır?</span></h2>
+			<div class="steps-container">
+				<div class="step-item">
+					<div class="step-icon-box">
+						<i class="fa-solid fa-hand-holding-dollar"></i>
+					</div>
+					<h4>1. Bağış Yap</h4>
+					<p>Güvenli ödeme altyapımızla dilediğin tutarda desteğini ilet.</p>
+				</div>
+				<div class="step-item">
+					<div class="step-icon-box">
+						<i class="fa-solid fa-network-wired"></i>
+					</div>
+					<h4>2. Sinaps Aktarımı</h4>
+					<p>Sistem, bağışını en acil durumdaki çocukla eşleştirir.</p>
+				</div>
+				<div class="step-item">
+					<div class="step-icon-box">
+						<i class="fa-solid fa-child-reaching"></i>
+					</div>
+					<h4>3. Hayat Kurtar</h4>
+					<p>Tedavi sürecini takip et ve yarattığın mucizeye tanık ol.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- sma yolculuğu (timeline) -->
+		<section class="bolum" id="yolculuk">
+			<h2 class="baslik">Umut <span>Yolculuğu</span></h2>
+			<div class="timeline-container">
+				<div class="timeline-item left">
+					<div class="timeline-content">
+						<h3>Teşhis ve Başlangıç</h3>
+						<p>
+							Hastalığın ilk belirtileri ve genetik test sonucu. Valilik onaylı
+							kampanya başvuru süreci.
+						</p>
+					</div>
+				</div>
+				<div class="timeline-item right">
+					<div class="timeline-content">
+						<h3>%35 - İlk İvme</h3>
+						<p>
+							Sesimizi duyurmaya başladığımız an. Gönüllü ağının kurulması ve
+							ilk büyük etkinlikler.
+						</p>
+					</div>
+				</div>
+				<div class="timeline-item left">
+					<div class="timeline-content">
+						<h3>%70 - Kritik Eşik</h3>
+						<p>
+							Umutların yeşerdiği nokta. Hastane teklifinin güncellenmesi ve
+							vize işlemleri.
+						</p>
+					</div>
+				</div>
+				<div class="timeline-item right">
+					<div class="timeline-content">
+						<h3>%100 - Zafer</h3>
+						<p>
+							İlacın bedelinin toplanması. Dubai'ye uçuş ve Zolgensma
+							tedavisinin uygulanması.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ailelerin sesi (referanslar) -->
+		<section class="bolum" id="referanslar">
+			<h2 class="baslik">Ailelerin <span>Sesi</span></h2>
+			<div class="testimonial-grid">
+				<div class="testimonial-card">
+					<i class="fa-solid fa-quote-left"></i>
+					<p class="testimonial-text">
+						"Kızım Ayşe için umutlarımızın tükendiği anda Sinaps projesi
+						karşımıza çıktı. Şeffaf ve hızlı süreç sayesinde tedaviye ulaştık."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">A</div>
+						<span>Ayşe'nin Annesi</span>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<i class="fa-solid fa-quote-left"></i>
+					<p class="testimonial-text">
+						"Sadece maddi destek değil, manevi olarak da yanımızda olan binlerce
+						gönüllüye minnettarız. Sinaps bir aile gibi."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">M</div>
+						<span>Mehmet'in Babası</span>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<i class="fa-solid fa-quote-left"></i>
+					<p class="testimonial-text">
+						"Bu platform sayesinde sesimizi duyurabildik. Ali artık daha güçlü,
+						geleceğe umutla bakıyoruz."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">E</div>
+						<span>Ali'nin Ailesi</span>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<i class="fa-solid fa-quote-left"></i>
+					<p class="testimonial-text">
+						"Sinaps sayesinde yalnız olmadığımızı hissettik. Can'ın ilk
+						adımlarını görmek paha biçilemez. Herkese minnettarız."
+					</p>
+					<div class="testimonial-author">
+						<div class="author-avatar">C</div>
+						<span>Can'ın Annesi</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- mağaza -->
+		<section class="bolum" id="magaza">
+			<h2 class="baslik">Hatıra <span>Mağazası</span></h2>
+			<div class="store-grid">
+				<div class="store-item glass-panel">
+					<div class="store-img"><i class="fa-solid fa-shirt"></i></div>
+					<div class="store-info">
+						<h4>Umut T-Shirt</h4>
+						<p class="price">350 ₺</p>
+						<button class="buy-btn" onclick="openModal()">Satın Al</button>
+					</div>
+				</div>
+				<div class="store-item glass-panel">
+					<div class="store-img"><i class="fa-solid fa-mug-hot"></i></div>
+					<div class="store-info">
+						<h4>Sinaps Kupa</h4>
+						<p class="price">150 ₺</p>
+						<button class="buy-btn" onclick="openModal()">Satın Al</button>
+					</div>
+				</div>
+				<div class="store-item glass-panel">
+					<div class="store-img">
+						<i class="fa-solid fa-hand-holding-heart"></i>
+					</div>
+					<div class="store-info">
+						<h4>Destek Bilekliği</h4>
+						<p class="price">50 ₺</p>
+						<button class="buy-btn" onclick="openModal()">Satın Al</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- bağış alanı -->
+		<section class="bolum" id="bagis">
+			<div class="bagis-kutusu glass-panel">
+				<h2 class="baslik" style="margin-bottom: 1rem">Umut Ol</h2>
+				<p style="margin-bottom: 2rem">Güvenli, şeffaf ve hızlı bağış.</p>
+
+				<div class="ilerleme-dis">
+					<div class="ilerleme-ic" id="mainProgress"></div>
+				</div>
+				<p style="margin-bottom: 1.5rem">
+					<strong>4.250.000 ₺</strong> / 5.000.000 ₺
+				</p>
+
+				<div class="miktar-grid">
+					<button class="miktar-btn" onclick="selectAmount(50)">50 ₺</button>
+					<button class="miktar-btn" onclick="selectAmount(100)">100 ₺</button>
+					<button class="miktar-btn" onclick="selectAmount(250)">250 ₺</button>
+					<button class="miktar-btn" onclick="selectAmount(500)">500 ₺</button>
+				</div>
+
+				<input
+					type="number"
+					id="customAmount"
+					class="custom-input"
+					placeholder="Farklı Bir Tutar (TL)"
+				/>
+
+				<button
+					class="cta-buton"
+					style="width: 100%; border: none; cursor: pointer"
+					onclick="openModal()"
+				>
+					Bağışı Tamamla <i class="fa-solid fa-arrow-right"></i>
+				</button>
+
+				<!-- iban kopyalama özelliği -->
+				<div class="iban-kutu">
+					<div style="text-align: left">
+						<div style="font-size: 0.8rem; color: var(--yazi-rengi-hafif)">
+							FAST / EFT / Havale için:
+						</div>
+						<div class="iban-text" id="ibanText">
+							TR12 0006 1000 0000 0012 3456 78
+						</div>
+					</div>
+					<button class="copy-btn" onclick="copyIBAN()">
+						<i class="fa-regular fa-copy"></i> Kopyala
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- BÜLTEN KISMI -->
+		<section class="bolum" id="bulten">
+			<div class="newsletter-box">
+				<div class="newsletter-content">
+					<h2>Gelişmelerden <span>Haberdar Ol</span></h2>
+					<p>
+						Sinaps projesindeki son durumdan, tedavi süreçlerinden ve
+						etkinliklerden ilk senin haberin olsun.
+					</p>
+				</div>
+				<form class="newsletter-form" onsubmit="newsletterSubmit(event)">
+					<input
+						type="email"
+						placeholder="E-posta adresinizi girin"
+						required
+						class="custom-input"
+						style="margin-bottom: 0"
+					/>
+					<button
+						type="submit"
+						class="cta-buton"
+						style="
+							border: none;
+							padding: 1rem 2rem;
+							font-size: 1rem;
+							white-space: nowrap;
+						"
+					>
+						Abone Ol
+					</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- footer -->
+		<footer>
+			<div class="footer-grid">
+				<div class="footer-col">
+					<a href="#" class="logo" style="margin-bottom: 1rem"
+						><i class="fa-solid fa-circle-nodes"></i> Sinaps</a
+					>
+					<p>
+						Geleceğin tedavilerini bugünün desteğiyle buluşturan, SMA ile
+						mücadele platformu.
+					</p>
+				</div>
+				<div class="footer-col">
+					<h4>Hızlı Erişim</h4>
+					<ul>
+						<li><a href="#vizyon">Neden Sinaps?</a></li>
+						<li><a href="#bagis">Bağış Yap</a></li>
+						<li><a href="#magaza">Mağaza</a></li>
+						<li><a href="#">Valilik İzinleri</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>İletişim</h4>
+					<ul>
+						<li><i class="fa-solid fa-envelope"></i> info@sinapsprojesi.org</li>
+						<li><i class="fa-solid fa-phone"></i> 0850 123 45 67</li>
+						<li><i class="fa-brands fa-instagram"></i> @sinapsproje</li>
+					</ul>
+				</div>
+			</div>
+			<div
+				style="
+					text-align: center;
+					padding-top: 2rem;
+					border-top: 1px solid #333;
+				"
+			>
+				<p>
+					&copy; 2026 Sinaps Projesi. Tasarım:
+					<a
+						href="https://github.com/erensogutlu"
+						target="_blank"
+						style="color: var(--vurgu-rengi); text-decoration: none"
+						>Eren Söğütlü</a
+					>
+				</p>
+			</div>
+		</footer>
+
+		<!-- canlı bildirim balonu -->
+		<div class="canli-bildirim" id="liveNotify">
+			<div class="bildirim-ikon"><i class="fa-solid fa-heart"></i></div>
+			<div>
+				<div style="font-weight: bold; font-size: 0.9rem" id="notifyName">
+					Ahmet K.
+				</div>
+				<div style="font-size: 0.8rem; color: var(--yazi-rengi-hafif)">
+					Az önce
+					<span
+						style="color: var(--basari-rengi); font-weight: bold"
+						id="notifyAmount"
+						>100 ₺</span
+					>
+					bağışladı.
+				</div>
+			</div>
+		</div>
+
+		<!-- yukarı çık butonu -->
+		<div class="yukari-cik-btn" id="yukariCikBtn" onclick="yukariCik()">
+			<i class="fa-solid fa-arrow-up"></i>
+		</div>
+
+		<!-- ödeme modali -->
+		<div class="modal-overlay" id="paymentModal">
+			<div class="modal-kart">
+				<div
+					style="
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						margin-bottom: 1.5rem;
+					"
+				>
+					<h3>Güvenli Ödeme</h3>
+					<i
+						class="fa-solid fa-xmark"
+						style="cursor: pointer; font-size: 1.5rem; color: var(--yazi-rengi)"
+						onclick="closeModal()"
+					></i>
+				</div>
+				<div
+					style="
+						background: var(--arkaplan-grad);
+						padding: 1rem;
+						border-radius: 10px;
+						margin-bottom: 1.5rem;
+						text-align: center;
+						font-weight: bold;
+						color: var(--yazi-rengi);
+					"
+				>
+					Tutar: <span id="modalAmountDisplay">0</span> ₺
+				</div>
+				<input
+					type="text"
+					class="custom-input"
+					placeholder="Kart Üzerindeki İsim"
+				/>
+				<input
+					type="text"
+					class="custom-input"
+					placeholder="Kart Numarası"
+					maxlength="19"
+				/>
+				<div style="display: flex; gap: 10px">
+					<input
+						type="text"
+						class="custom-input"
+						placeholder="AA/YY"
+						maxlength="5"
+					/>
+					<input
+						type="text"
+						class="custom-input"
+						placeholder="CVC"
+						maxlength="3"
+					/>
+				</div>
+				<button
+					class="cta-buton"
+					style="width: 100%; border: none; margin-top: 1rem; cursor: pointer"
+					onclick="processPayment()"
+				>
+					Onayla ve Bağışla
+				</button>
+				<p
+					style="
+						text-align: center;
+						font-size: 0.8rem;
+						color: #888;
+						margin-top: 1rem;
+					"
+				>
+					<i class="fa-solid fa-lock"></i> 256-bit SSL ile korunmaktadır.
+				</p>
+			</div>
+		</div>
+
+		<!-- BAŞARI MODALI -->
+		<div id="successModal" class="modal-overlay">
+			<div class="modal-kart" style="text-align: center">
+				<div class="success-icon-container">
+					<i class="fa-solid fa-check"></i>
+				</div>
+				<h3
+					id="successTitle"
+					style="margin-bottom: 10px; color: var(--basari-rengi)"
+				>
+					Başarılı!
+				</h3>
+				<p
+					id="successMessage"
+					style="color: var(--yazi-rengi-hafif); margin-bottom: 20px"
+				>
+					İşleminiz başarıyla gerçekleşti.
+				</p>
+				<button
+					class="cta-buton"
+					onclick="closeSuccessModal()"
+					style="width: 100%; border: none"
+				>
+					Harika!
+				</button>
+			</div>
+		</div>
+
+		<script src="main.js"></script>
+	</body>
+</html>
